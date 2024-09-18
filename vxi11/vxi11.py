@@ -132,7 +132,7 @@ def parse_visa_resource_string(resource_string):
     # TCPIP0::10.0.0.1::usb0::INSTR
     # TCPIP0::10.0.0.1::usb0[1234::5678::MYSERIAL::0]::INSTR
     m = re.match(r'^(?P<prefix>(?P<type>TCPIP)\d*)(::(?P<arg1>[^\s:]+))'
-            '(::(?P<arg2>[^\s:]+(\[.+\])?))?(::(?P<suffix>INSTR))$',
+            r'(::(?P<arg2>[^\s:]+(\[.+\])?))?(::(?P<suffix>INSTR))$',
             resource_string, re.I)
 
     if m is not None:
